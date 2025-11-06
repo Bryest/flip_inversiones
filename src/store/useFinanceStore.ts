@@ -7,7 +7,7 @@ import { generateSeries } from "../utils/chart";
 type State = {
     userName: string | null;
     currency: Currency;
-    balance: number;        // activo principal
+    balance: number;
     period: Period;
     income: ReturnType<typeof generateSeries>;
 };

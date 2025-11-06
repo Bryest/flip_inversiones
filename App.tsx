@@ -1,13 +1,17 @@
-import { StatusBar } from "expo-status-bar";
-import { View, Text } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import LoginScreen from "./src/screens/LoginScreen";
+import DashboardScreen from "./src/screens/DashboardScreen";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-xl font-bold text-blue-500">
-        Welcome to NativeWind v5!
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Dashboard" component={DashboardScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
