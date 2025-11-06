@@ -1,6 +1,6 @@
 // src/store/useFinanceStore.ts
 import { create } from "zustand";
-import { Currency, PERIODS, Period, RANDOM_NAMES, BALANCE_MIN, BALANCE_MAX } from "../constants/finance";
+import { Currency, Period, RANDOM_NAMES } from "../constants/finance";
 import { pick, randInt } from "../utils/random";
 import { generateSeries } from "../utils/chart";
 
@@ -29,7 +29,7 @@ export const useFinanceStore = create<State & Actions>()((set, get) => ({
 
     login: () => {
         const userName = pick(RANDOM_NAMES);
-        const balance = randInt(BALANCE_MIN, BALANCE_MAX);
+        const balance = 27892.12;
         const period = "1 Week" as Period;
         const income = generateSeries(period);
         set({ userName, balance, period, income });

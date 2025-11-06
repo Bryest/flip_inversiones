@@ -1,3 +1,4 @@
+import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ScrollView } from "react-native";
 import Header from "../components/Header";
 import CurrencySelector from "../components/CurrencySelector";
@@ -7,37 +8,38 @@ import IncomeChart from "../components/IncomeChart";
 
 export default function DashboardScreen() {
   return (
-    <ScrollView
-      className="flex-1 bg-[#F3F4F6]"
-      contentContainerStyle={{
-        paddingHorizontal: 24,
-        paddingTop: 50,
-        paddingBottom: 32,
-      }}
-      showsVerticalScrollIndicator={false}
-    >
-      {/* 🧠 Header Section */}
-      <View className="mb-6">
-        <Header />
-      </View>
+    <SafeAreaView className="flex-1 bg-[#F9FAFB]">
+      <ScrollView
+        contentContainerStyle={{
+          paddingHorizontal: 24,
+          paddingTop: 32,
+          paddingBottom: 40,
+        }}
+        showsVerticalScrollIndicator={false}
+      >
+        {/* User */}
+        <View className="mb-8">
+          <Header />
+        </View>
 
-      {/* 💰 Balance Section */}
-      <View className="flex-row justify-between items-center mb-2">
-        <Text className="text-gray-500 text-base">Your Active Balance</Text>
-        <CurrencySelector />
-      </View>
+        {/* Balance Section */}
+        <View className="flex-row justify-between items-center mb-2">
+          <Text className="font-medium text-xl">Your Active Balance</Text>
+          <CurrencySelector />
+        </View>
 
-      <BalanceCard />
+        <BalanceCard />
 
-      {/* 📆 Period Tabs */}
-      <View className="mt-6 mb-4">
-        <PeriodTabs />
-      </View>
+        {/* Period Tabs */}
+        <View className="mt-6 mb-6">
+          <PeriodTabs />
+        </View>
 
-      {/* 📈 Income Chart */}
-      <View className="mt-4">
-        <IncomeChart />
-      </View>
-    </ScrollView>
+        {/* Income Chart */}
+        <View className="mt-2">
+          <IncomeChart />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }

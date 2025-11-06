@@ -3,21 +3,31 @@ import { PERIODS, Period } from "../constants/finance";
 import { useFinanceStore } from "../store/useFinanceStore";
 
 export default function PeriodTabs() {
-    const active = useFinanceStore(s => s.period);
-    const setPeriod = useFinanceStore(s => s.setPeriod);
-    return (
-        <View className="flex-row flex-wrap gap-2">
-            {PERIODS.map(p => {
-                const isActive = p === active;
-                return (
-                    <Pressable
-                        key={p}
-                        onPress={() => setPeriod(p as Period)}
-                        className={`px-3 py-1 rounded-xl border ${isActive ? "bg-indigo-600 border-indigo-600" : "bg-white border-gray-300"}`}>
-                        <Text className={isActive ? "text-white" : "text-gray-900"}>{p}</Text>
-                    </Pressable>
-                );
-            })}
-        </View>
-    );
+  const period = useFinanceStore(s => s.period);
+  const setPeriod = useFinanceStore(s => s.setPeriod);
+
+  return (
+    <View className="flex-row justify-between mt-2">
+      {PERIODS.map(p => {
+        const active = p === period;
+        return (
+          <Pressable
+            key={p}
+            onPress={() => setPeriod(p as Period)}
+            className={`px-4 py-2 rounded-xl ${
+              active ? "bg-[#5967F5]" : "bg-[#E5E7EB]"
+            }`}
+          >
+            <Text
+              className={`text-sm font-semibold ${
+                active ? "text-white" : "text-[#374151]"
+              }`}
+            >
+              {p}
+            </Text>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
 }
