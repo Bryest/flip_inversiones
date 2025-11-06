@@ -1,24 +1,48 @@
-import { Pressable, Text, PressableProps } from "react-native";
+import { Pressable, View, Text } from "react-native";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 
-type Props = PressableProps & {
+type Variant = "filled" | "outline" | "text";
+
+type ButtonProps = {
   title: string;
-  variant?: "primary" | "ghost";
+  variant?: Variant;
+  icon?: React.ReactNode;
+  onPress: () => void;
 };
 
-export default function Button({ title, variant = "primary", ...rest }: Props) {
-  const base = "w-full py-4 rounded-2xl items-center";
-  const styles =
-    variant === "primary"
-      ? `${base} bg-indigo-600`
-      : `${base} border border-gray-300 bg-white`;
-  const txt =
-    variant === "primary"
-      ? "text-white font-semibold"
-      : "text-gray-900 font-semibold";
+// ✅ Button component compatible with NativeWind
+export default function Button({
+  title,
+  variant = "filled",
+  icon,
+  onPress,
+}: ButtonProps) {
+  const base = "w-full py-4 rounded-full items-center justify-center flex-row";
+
+  const variants: Record<
+    Variant,
+    { container: string; text: string }
+  > = {
+    filled: {
+      container: "bg-[#4F46E5]",
+      text: "text-white",
+    },
+    outline: {
+      container: "bg-white",
+      text: "text-gray-900",
+    },
+    text: {
+      container: "bg-transparent",
+      text: "text-blue-600",
+    },
+  };
+
+  const current = variants[variant];
 
   return (
-    <Pressable className={styles} {...rest}>
-      <Text className={txt}>{title}</Text>
+    <Pressable onPress={onPress} className={`${base} ${current.container}`}>
+      <Text className={`text-base font-semibold ${current.text}`}>{title}</Text>
+      {icon && <View className="ml-2">{icon}</View>}
     </Pressable>
   );
 }

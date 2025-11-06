@@ -7,17 +7,37 @@ import IncomeChart from "../components/IncomeChart";
 
 export default function DashboardScreen() {
   return (
-    <ScrollView className="flex-1 bg-[#F3F4F6]" contentContainerStyle={{ padding: 16 }}>
-      <Header />
-      <View className="mt-4 flex-row justify-between items-center">
-        <Text className="text-gray-500">Your Active Balance</Text>
+    <ScrollView
+      className="flex-1 bg-[#F3F4F6]"
+      contentContainerStyle={{
+        paddingHorizontal: 24,
+        paddingTop: 50,
+        paddingBottom: 32,
+      }}
+      showsVerticalScrollIndicator={false}
+    >
+      {/* 🧠 Header Section */}
+      <View className="mb-6">
+        <Header />
+      </View>
+
+      {/* 💰 Balance Section */}
+      <View className="flex-row justify-between items-center mb-2">
+        <Text className="text-gray-500 text-base">Your Active Balance</Text>
         <CurrencySelector />
       </View>
+
       <BalanceCard />
-      <View className="mt-4">
+
+      {/* 📆 Period Tabs */}
+      <View className="mt-6 mb-4">
         <PeriodTabs />
       </View>
-      <IncomeChart />
+
+      {/* 📈 Income Chart */}
+      <View className="mt-4">
+        <IncomeChart />
+      </View>
     </ScrollView>
   );
 }
