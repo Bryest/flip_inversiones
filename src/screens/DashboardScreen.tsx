@@ -22,20 +22,17 @@ export default function DashboardScreen() {
           <Header />
         </View>
 
-        {/* Balance Section */}
         <View className="flex-row justify-between items-center mb-2">
-          <Text className="font-medium text-xl">Your Active Balance</Text>
+          <Text className="font-notoMedium text-xl">Your Active Balance </Text>
           <CurrencySelector />
         </View>
 
         <BalanceCard />
 
-        {/* Period Tabs */}
         <View className="mt-6 mb-6">
           <PeriodTabs />
         </View>
 
-        {/* Income Chart */}
         <View className="mt-2">
           <IncomeChart />
         </View>

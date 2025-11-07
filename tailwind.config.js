@@ -6,7 +6,15 @@ module.exports = {
   ],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        noto: ["NotoSansRegular"],
+        notoMedium: ["NotoSansMedium"],
+        notoSemi: ["NotoSansSemiBold"],
+        notoBold: ["NotoSansBold"],
+        notoBlack: ["NotoSansBlack"],
+      }
+    },
   },
   plugins: [],
 };

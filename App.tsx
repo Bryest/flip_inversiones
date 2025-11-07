@@ -4,6 +4,7 @@ import LoginScreen from "./src/screens/LoginScreen";
 import DashboardScreen from "./src/screens/DashboardScreen";
 import useLoadFonts from "./src/hooks/useLoadFonts";
 import { View, ActivityIndicator } from "react-native";
+import { useEffect } from "react";
 
 const Stack = createNativeStackNavigator();
 

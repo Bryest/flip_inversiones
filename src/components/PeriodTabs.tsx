@@ -19,7 +19,7 @@ export default function PeriodTabs() {
             }`}
           >
             <Text
-              className={`text-sm font-semibold ${
+              className={`text-sm font-notoSemi ${
                 active ? "text-white" : "text-[#374151]"
               }`}
             >

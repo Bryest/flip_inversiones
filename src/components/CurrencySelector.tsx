@@ -27,7 +27,7 @@ export default function CurrencySelector() {
           elevation: 1,
         }}
       >
-        <Text className="text-indigo-900 font-medium mr-1">
+        <Text className="text-indigo-900 font-notoBold mr-1">
           {currency === "USD" ? "US Dollar" : "Soles"}
         </Text>
         <Ionicons name="chevron-down" size={14} color="#1E3A8A" />

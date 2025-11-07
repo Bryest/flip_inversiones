@@ -10,7 +10,7 @@ type ButtonProps = {
   onPress: () => void;
 };
 
-// ✅ Button component compatible with NativeWind
+// Button component compatible with NativeWind
 export default function Button({
   title,
   variant = "filled",

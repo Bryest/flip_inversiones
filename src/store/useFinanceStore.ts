@@ -1,7 +1,7 @@
 // src/store/useFinanceStore.ts
 import { create } from "zustand";
 import { Currency, Period, RANDOM_NAMES } from "../constants/finance";
-import { pick, randInt } from "../utils/random";
+import { pick } from "../utils/random";
 import { generateSeries } from "../utils/chart";
 
 type State = {

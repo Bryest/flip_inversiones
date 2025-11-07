@@ -7,13 +7,14 @@ export default function BalanceCard() {
   const currency = useFinanceStore(s => s.currency);
 
   return (
-    <View className="bg-transparent w-full items-end px-2 py-2">
+    <View className="bg-transparent w-full px-2 py-2 flex flex-row justify-end">
       <Text
-        className="text-[#1E3A8A] text-6xl font-[Nunito-bold] tracking-tight text-right mr-8"
-        style={{ lineHeight: 64 }}
+        className="text-[#1E3A8A] text-6xl font-notoMedium tracking-tight
+               w-full text-right leading-[64px]"
       >
         {fmtMoney(balance, currency)}
       </Text>
     </View>
+
   );
 }

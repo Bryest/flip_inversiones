@@ -19,7 +19,7 @@ export const generateSeries = (period: Period): Point[] => {
     const base = Math.random() * 500 + 200;
     return Array.from({ length: steps }, (_, i) => {
         const x = now.subtract(steps - 1 - i, delta as any).toDate();
-        // pequeña onda + ruido
+        // small noise wave
         const y = base + Math.sin(i / 2) * 150 + Math.random() * 120;
         return { x, y: Math.max(0, Math.round(y * 100) / 100) };
     });

@@ -4,7 +4,7 @@ import Button from "../components/Button";
 import { useFinanceStore } from "../store/useFinanceStore";
 import { IMAGES } from "../constants/images";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
+import { FontAwesome, Ionicons } from "@expo/vector-icons";
 
 type Props = NativeStackScreenProps<any>;
 

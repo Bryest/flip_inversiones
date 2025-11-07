@@ -7,8 +7,12 @@ export default function useLoadFonts() {
   useEffect(() => {
     (async () => {
       await Font.loadAsync({
-        Inter: require("../../assets/inter-variable.ttf"), // ✅ Adjust path if needed
-        Nunito: require("../../assets/nunitosans-variable.ttf"), // ✅ Adjust path if needed
+        Inter: require("../../assets/inter-variable.ttf"),
+        NotoSansBlack: require("../../assets/NotoSans/NotoSans-Black.ttf"),
+        NotoSansBold: require("../../assets/NotoSans/NotoSans-ExtraBold.ttf"),
+        NotoSansMedium: require("../../assets/NotoSans/NotoSans-Medium.ttf"),
+        NotoSansRegular: require("../../assets/NotoSans/NotoSans-Regular.ttf"),
+        NotoSansSemiBold: require("../../assets/NotoSans/NotoSans-SemiBold.ttf"),
       });
       setLoaded(true);
     })();
